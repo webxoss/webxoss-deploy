@@ -1,0 +1,15 @@
+{
+  "name": "webxoss-deploy",
+  "version": "1.0.0",
+  "description": "auto deploy for WEBXOSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WEBXOSS <WEBXOSS@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "githubhook": "^1.9.1",
+    "minimist": "^1.2.0"
+  }
+}
