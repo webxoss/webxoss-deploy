@@ -26,13 +26,13 @@ const runShell = (file, env) => {
       env,
       encoding: 'utf8',
       timeout: 3 * 60 * 60 * 1000,
+    }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(stderr)
+        return reject(error)
+      }
+      resolve(stdout)
     })
-  }, (error, stdout, stderr) => {
-    if (error) {
-      console.error(stderr)
-      return reject(error)
-    }
-    resolve(stdout)
   })
 }
 
