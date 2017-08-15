@@ -4,6 +4,7 @@
 #   $COMMIT_ID
 #   $CLIENT_ID
 #   $ASSETS_ID
+#   $IMAGES_DIR
 
 mkdir -p /tmp/webxoss-deploy
 cd /tmp/webxoss-deploy
@@ -35,6 +36,10 @@ FILE=webxoss-assets-$ASSETS_ID.tar.gz
 mv $FILE.tmp $FILE
 # Extract
 tar xzf $FILE -C $COMMIT_ID/webxoss-client/background --strip-components=1
+
+# Card images
+mkdir -p $COMMIT_ID/webxoss-client/images
+cp -n $IMAGES_DIR/*.jpg $COMMIT_ID/webxoss-client/images/ || true
 
 # Move
 mkdir -p $DIST

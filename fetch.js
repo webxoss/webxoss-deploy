@@ -36,7 +36,7 @@ const runShell = (file, env) => {
   })
 }
 
-module.exports = (env, id, dist) => {
+module.exports = (env, id, dist, imagesDir) => {
   const author = 'webxoss'
   return getSubmoduleId(author, 'webxoss-core', id, 'webxoss-client').then(clientId => {
     return getSubmoduleId(author, 'webxoss-client', clientId, 'background').then(assetsId => {
@@ -46,6 +46,7 @@ module.exports = (env, id, dist) => {
         COMMIT_ID: id,
         CLIENT_ID: clientId,
         ASSETS_ID: assetsId,
+        IMAGES_DIR: imagesDir,
       })
     })
   })

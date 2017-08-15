@@ -12,7 +12,7 @@ console.log(params)
 
 hook.on('push:webxoss-core:refs/heads/test', data => {
   console.log(`test: ${data.after}`)
-  fetch('test', data.after, params.dist)
+  fetch('test', data.after, params.dist, params.images)
     .then(() => console.log(`ok: test-${data.after}`))
     .catch(console.error)
 })
